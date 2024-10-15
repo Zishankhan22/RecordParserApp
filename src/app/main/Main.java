@@ -2,11 +2,10 @@ package app.main;
 
 import app.model.Record;
 import app.parser.DataParser;
-import app.report.ReportGenerator;
+import app.processor.BuildDataProcessor;
+import app.report.BuildReportGenerator;
 
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
@@ -19,16 +18,10 @@ public class Main {
         DataParser parser = new DataParser();
         List<Record> data = parser.parse(inputData);
 
-        ReportGenerator reportGenerator = new ReportGenerator(data);
+        BuildDataProcessor processor = new BuildDataProcessor(data);
+        processor.process(inputData);
 
-        Map<String, Long> uniqueCustomerPerContract = reportGenerator.getUniqueCustomersPerContract();
-        Map<String, Long> uniqueCustomerPerGeoZone = reportGenerator.getUniqueCustomersPerGeozone();
-        Map<String, Double> avgBuildDurationPerGeoZone = reportGenerator.getAverageBuildDurationPerGeozone();
-        Map<String, Set<String>> customerIdsPerGeoZone = reportGenerator.getUniqueCustomerListPerGeozone();
-
-        System.out.println("Unique Customers per ContractId: " + uniqueCustomerPerContract);
-        System.out.println("Unique Customers per GeoZone: " + uniqueCustomerPerGeoZone);
-        System.out.println("Average Build Duration per GeoZone: " + avgBuildDurationPerGeoZone);
-        System.out.println("Customer IDs per GeoZone: " + customerIdsPerGeoZone);
+        BuildReportGenerator reportGenerator = new BuildReportGenerator(processor);
+        reportGenerator.generateReport();
     }
 }
