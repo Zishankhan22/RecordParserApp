@@ -4,7 +4,7 @@ import app.model.Record;
 import java.util.List;
 import java.util.ArrayList;
 
-public class DataParser {
+public class DataParser implements DataparserInterface{
     public List<Record> parse(String input) {
         if (input == null || input.isEmpty()) {
             throw new IllegalArgumentException("Input cannot be null or empty");
@@ -33,5 +33,3 @@ public class DataParser {
         return records;
     }
 }
-
-
