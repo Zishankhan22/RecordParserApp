@@ -8,9 +8,10 @@ JDK11 or above must be installed in local to compile the files and then run the 
 Steps to run - 
 1. open the main diretory in termnal
 
-2. run command to compile all .java files in App (check for correct commands if local system varies from windows to unix or linux
+2. run command to compile all java files in App (check for correct commands if local system varies from windows to unix or linux
 
-"javac -d out .\src\app\main\Main.java .\src\app\model\Record.java .\src\app\parser\DataParser.java .\src\app\report\ReportGenerator.java"
+" javac -d out .\src\app\main\Main.java .\src\app\model\Record.java .\src\app\parser\DataParser.java .\src\app\parser\DataparserInterface.java .\src\app\processor\BuildDataProcessor.java .\src\app\processor\DataProcessor.java .\src\app\report\BuildReportGenerator.java .\src\app\report\ReportGeneratorInterface.java
+"
 
 3. run command for runnnig the Main 
 
@@ -18,7 +19,8 @@ Steps to run -
 
 4. run command to compile all classes including tests classes
 
-"javac -d out -cp junit-platform-console-standalone-1.9.2.jar .\src\app\main\Main.java .\src\app\model\Record.java .\src\app\parser\DataParser.java .\src\app\report\ReportGenerator.java .\src\tests\report\ReportGeneratorTest.java .\src\tests\parser\DataParserTest.java"
+" javac -d out -cp junit-platform-console-standalone-1.9.2.jar .\src\app\main\Main.java .\src\app\model\Record.java .\src\app\parser\DataParser.java .\src\app\parser\DataparserInterface.java .\src\app\processor\BuildDataProcessor.java .\src\app\processor\DataProcessor.java .\src\app\report\BuildReportGenerator.java .\src\app\report\ReportGeneratorInterface.java .\src\tests\parser\DataParserTest.java .\src\tests\processor\BuildDataProcessorTest.java .\src\tests\report\BuildReportGeneratorTest.java
+"
 
 5. run command to run the tests files
 
