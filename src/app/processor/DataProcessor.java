@@ -1,5 +1,5 @@
 package app.processor;
 
-public interface DataProcessor {
+public interface DataProcessorInterface {
     void process(String data);
 }
