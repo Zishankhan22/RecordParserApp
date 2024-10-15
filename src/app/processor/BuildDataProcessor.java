@@ -4,7 +4,7 @@ import app.model.Record;
 
 import java.util.*;
 
-public class BuildDataProcessor implements DataProcessor{
+public class BuildDataProcessor implements DataProcessorInterface{
 
     private List<Record> records;
     private Map<String, Set<String>> uniqueCustomersByContract = new HashMap<>();
